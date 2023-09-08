@@ -19,7 +19,7 @@ function App() {
   const [count, setCount] = useState(0)
   
   const getWebApps = async () => {
-    const resp = await axios.get("http://localhost:5000/api/mini-apps")
+    const resp = await axios.get("https://portfolio-backend-render-dh74.onrender.com/api/mini-apps")
     return resp.data
   }
   
@@ -28,7 +28,7 @@ function App() {
     setApp(data.data)
     console.log(data.data)
   }
-  
+  //  i don't believe the props are used
   const [app, setApp] = useState(() => loadMiniApps())
 
   return (

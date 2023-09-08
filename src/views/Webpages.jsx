@@ -8,7 +8,7 @@ const WebPages = () => {
         // }, [webpages]);
         
         const getData = async () => {
-            const resp = await axios.get('http://localhost:5000/api/project-previews')
+            const resp = await axios.get('https://portfolio-backend-render-dh74.onrender.com/api/project-previews')
             return resp.data
         }
         

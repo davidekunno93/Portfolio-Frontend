@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Carousel } from "../Carousel";
 import { useState } from "react";
+import axios from "axios";
 
 const Home = () => {
     const [suggestion, setSuggestion] = useState(null);
@@ -20,7 +21,7 @@ const Home = () => {
         // console.log(extraFeedback)
     }
 
-    const submitFeedback = () => {
+    const submitFeedback = async () => {
         if (!suggestion) {
             alert("Please enter a suggestion before submitting feedback.")
         } else if (suggestion) {
@@ -29,13 +30,17 @@ const Home = () => {
                 "extraFeedback": extraFeedback
             }
             // post the data to backend and give return data to handle data function
-            navigate('/feedback-received')
+            const resp = await axios.post("https://portfolio-backend-render-dh74.onrender.com/submit-feedback", JSON.stringify(data), {
+                headers: {"Content-Type" : "application/json"}
+            })
+            .then(resp => handleFeedbackData(resp));
+            // navigate('/feedback-received')
         }
         
     }
 
     const handleFeedbackData = (resp) => {
-        console.log(resp.data)
+        console.log(resp.data.data)
         navigate('/feedback-received')
     }
 

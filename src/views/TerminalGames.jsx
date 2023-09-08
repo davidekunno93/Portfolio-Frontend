@@ -7,7 +7,7 @@ const TerminalGames = () => {
         <div className="empty-5"></div>
             <h1 className="center-text">My Terminal Games</h1>
             <div className="section-90 flx-r flx-wrap just-se">
-                <div className="square flx-c mx-2 my-2">
+                <div className="square flx-c mx-2 my-5">
                     <div className="square-img-div">
                         <img className="square-img-top" src="https://i.imgur.com/t7emokh.png" />
                     </div>
@@ -20,7 +20,7 @@ const TerminalGames = () => {
                         </span>
                     </button></Link>
                 </div>
-                <div className="square flx-c mx-2 my-2">
+                <div className="square flx-c mx-2 my-5">
                     <div className="square-img-div">
                         <img className="square-img-bottom" src="https://i.imgur.com/0iG7iHj.jpg" />
                     </div>
@@ -33,7 +33,7 @@ const TerminalGames = () => {
                         </span>
                     </button></Link>
                 </div>
-                <div className="square flx-c mx-2 my-2">
+                <div className="square flx-c mx-2 my-5">
                     <div className="square-img-div">
                         <img className="square-img" src="https://i.imgur.com/mpoJg17.jpg" />
                     </div>
