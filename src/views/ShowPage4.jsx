@@ -39,7 +39,7 @@ const ShowPage4 = (props) => {
                     <p className="m0"><strong>Github:</strong> <Link className="wrap-text" to="https://github.com/davidekunno93/Weather_App.git" target="_blank">https://github.com/davidekunno93/Weather_App.git</Link></p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text">Coming soon...</Link></p>
+                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" to="https://weather-app-nine-topaz.vercel.app/">https://weather-app-nine-topaz.vercel.app/</Link></p>
                 </div>
             </div>
         </>
