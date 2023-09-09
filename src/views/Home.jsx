@@ -94,30 +94,30 @@ const Home = () => {
                 <div className="container part3 flx-r flx-wrap just-se">
                     <div className="section2 flx-c">
                         <img src="https://i.imgur.com/8s3omTG.png" />
-                        <h2 className="center-text xx-large">Web Pages</h2>
+                        <h2 className="center-text xx-large dark-text">Web Pages</h2>
                         <Link to="/web-pages"><button className="square-btn-big center mb-3">
                             <p className="m0 inline v-align">See More</p>
-                            <span class="material-symbols-outlined v-align ml-2">
+                            <span class="material-symbols-outlined v-align ml-2 white-text">
                                 arrow_forward
                             </span>
                         </button></Link>
                     </div>
                     <div className="section2 flx-c">
                         <img src="https://i.imgur.com/40THUP7.png" />
-                        <h2 className="center-text xx-large">Mini Apps</h2>
+                        <h2 className="center-text xx-large dark-text">Mini Apps</h2>
                         <Link to="/mini-apps"><button className="square-btn-big center mb-3">
                             <p className="m0 inline v-align">See More</p>
-                            <span class="material-symbols-outlined v-align ml-2">
+                            <span class="material-symbols-outlined v-align ml-2 white-text">
                                 arrow_forward
                             </span>
                         </button></Link>
                     </div>
                     <div className="section2 flx-c">
                         <img src="https://i.imgur.com/t7emokh.png" />
-                        <h2 className="center-text xx-large">Terminal Games</h2>
+                        <h2 className="center-text xx-large dark-text">Terminal Games</h2>
                         <Link to="/terminal-games"><button className="square-btn-big center mb-3">
                             <p className="m0 inline v-align">See More</p>
-                            <span class="material-symbols-outlined v-align ml-2">
+                            <span class="material-symbols-outlined v-align ml-2 white-text">
                                 arrow_forward
                             </span>
                         </button></Link>
@@ -144,7 +144,7 @@ const Home = () => {
                     <textarea onChange={(e) => updateExtraFeedback(e)} className="form-textarea2" placeholder="Any more information..."></textarea>
                     <button onClick={() => submitFeedback()} className="square-btn-big center my-3">
                         <p className="m0 ml-3 inline v-align large">SUBMIT</p>
-                        <span class="material-symbols-outlined v-align ml-2">
+                        <span class="material-symbols-outlined v-align ml-2 white-text">
                             arrow_forward
                         </span>
                     </button>

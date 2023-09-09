@@ -12,7 +12,7 @@ const ShowPage = () => {
             <h1 className="center-text xx-large">{project.title}</h1>
             <div className="section-80 center my-2 flx-c">
                 <img className="section1-img" src={project.title_img} />
-                <div className="section-text">
+                <div className="section-text dark-text">
                     {project.text1}
                 </div>
             </div>
@@ -24,12 +24,12 @@ const ShowPage = () => {
                     </div>
                     })}
                 </div>
-                <div className="section-text">
+                <div className="section-text dark-text">
                 {project.text2}
                 </div>
             </div>
 
-            <div className="section-80 center my-2 flx-c">
+            <div className="section-80 center my-2 flx-c dark-text">
                 <div className="section-text">
                     <p className="m0"><strong>Technologies:</strong> {project.techs}</p>
                 </div>

@@ -678,6 +678,9 @@ p{
 .roboto{
   font-family: Roboto;
 }
+.dark-text{
+  color: #213547;
+}
 .section{
   width: 360px;
   height: 350px;

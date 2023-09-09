@@ -10,7 +10,7 @@ const ShowPage3 = (props) => {
             <h1 className="center-text xx-large">Pick-A-Pokemon</h1>
             <div className="section-80 center my-2 flx-c">
                 <img className="section1-img" src="https://i.imgur.com/PHfsfFT.png" />
-                <div className="section-text">
+                <div className="section-text dark-text">
                 This app was created during my bootcamp experience. The app was an assignment to practice using the DOM and getting comfortable with JavaScript in a fun, Poketastic type of way. Only one HTML file was used with CSS styling and a JS file for the interactive features of the page.
                 </div>
             </div>
@@ -31,7 +31,7 @@ const ShowPage3 = (props) => {
                 </div>
             </div>
 
-            <div className="section-80 center my-2 flx-c">
+            <div className="section-80 center my-2 flx-c dark-text">
                 <div className="section-text">
                     <p className="m0"><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
                 </div>

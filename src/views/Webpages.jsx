@@ -31,11 +31,11 @@ const WebPages = () => {
                     <div className="square-img-div">
                         <img className="square-img" src={p.dp} />
                     </div>
-                    <p className="m0 square-title x-large center-text my-2"><strong>{p.title}</strong></p>
-                    <p className="m0 square-desc medium center-text">{p.desc}</p>
+                    <p className="m0 square-title x-large center-text my-2 dark-text"><strong>{p.title}</strong></p>
+                    <p className="m0 square-desc medium center-text black-text">{p.desc}</p>
                     <Link to='/showpage' state={{ project: p }}><button className="square-btn-big center x-large mt-3">
                         <p className="m0 inline v-align ml-3 mb-2">View</p>
-                        <span className="material-symbols-outlined v-align ml-2 mb-2">
+                        <span className="material-symbols-outlined v-align ml-2 mb-2 white-text white-text">
                             arrow_forward
                         </span>
                     </button></Link>

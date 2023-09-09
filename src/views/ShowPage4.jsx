@@ -10,7 +10,7 @@ const ShowPage4 = (props) => {
             <h1 className="center-text xx-large">Geo-Weather App</h1>
             <div className="section-80 center my-2 flx-c">
                 <img className="section1-img" src="https://i.imgur.com/X6WuFtg.png" />
-                <div className="section-text">
+                <div className="section-text dark-text">
                 This app allowed me to explore using API calls from multiple different APIs simultaneously, sorting through that returned information and displaying it on the page. I also continued to practice using the DOM and took the opportunity to exercise my creativity producing icons and images for this project.
                 </div>
             </div>
@@ -31,7 +31,7 @@ const ShowPage4 = (props) => {
                 </div>
             </div>
 
-            <div className="section-80 center my-2 flx-c">
+            <div className="section-80 center my-2 flx-c dark-text">
                 <div className="section-text">
                     <p className="m0"><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
                 </div>

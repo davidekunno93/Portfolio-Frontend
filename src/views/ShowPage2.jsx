@@ -10,7 +10,7 @@ const ShowPage2 = (props) => {
             <h1 className="center-text xx-large">TimeZone App</h1>
             <div className="section-80 center my-2 flx-c">
                 <img className="section1-img" src="https://i.imgur.com/iojAoTJ.png" />
-                <div className="section-text">
+                <div className="section-text dark-text">
                 I made this App to practice skills I had already learned like user authentication and API calls. My biggest goal was to make the app responsive and have a short turn around time for creating the app from start to finish. The objective was to make myself more efficient and keep myself sharp. Flask was used for the Backend, React was used for the Frontend.
                 </div>
             </div>
@@ -47,7 +47,7 @@ const ShowPage2 = (props) => {
                 </div>
             </div>
 
-            <div className="section-80 center my-2 flx-c">
+            <div className="section-80 center my-2 flx-c dark-text">
                 <div className="section-text">
                     <p className="m0"><strong>Technologies:</strong> HTML, CSS, Python, React JS, Flask, PostgreSQL</p>
                 </div>

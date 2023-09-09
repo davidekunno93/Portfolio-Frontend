@@ -48,21 +48,21 @@ export const Carousel = () => {
             <div className="carousel-btns flx-r just-ce">
 
                 <button onClick={() => updateIndex(activeIndex - 1)} className='arrow-left seethru'>
-                    <span className="material-symbols-outlined">
+                    <span className="material-symbols-outlined  black-text">
                         arrow_back_ios
                     </span>
                 </button>
 
                 <div className="indicators">
                     {items.map((item, index) => {
-                        return <button className='seethru' onClick={() => updateIndex(index)}><span className="material-symbols-outlined">
+                        return <button className='seethru' onClick={() => updateIndex(index)}><span className="material-symbols-outlined black-text">
                             {activeIndex === index ? "radio_button_checked" : "radio_button_unchecked"}
                         </span></button>
                     })}
                 </div>
 
                 <button onClick={() => updateIndex(activeIndex + 1)} className='arrow-right seethru'>
-                    <span className="material-symbols-outlined">
+                    <span className="material-symbols-outlined black-text">
                         arrow_forward_ios
                     </span>
                 </button>
