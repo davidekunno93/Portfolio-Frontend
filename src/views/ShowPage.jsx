@@ -37,7 +37,7 @@ const ShowPage = () => {
                     <p className="m0"><strong>Github:</strong> <Link className="wrap-text" to={project.github} target="_blank">{project.github}</Link></p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text">{project.website}</Link></p>
+                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" to={project.website ? project.website : ""} target="_blank">{project.website}</Link></p>
                 </div>
             </div>
         </>

@@ -39,7 +39,7 @@ const ShowPage3 = (props) => {
                     <p className="m0"><strong>Github:</strong> <Link className="wrap-text" to="https://github.com/davidekunno93/pokeapi_javascript.git" target="_blank">https://github.com/davidekunno93/pokeapi_javascript.git</Link></p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" to="https://pokeapi-javascript.vercel.app/">https://pokeapi-javascript.vercel.app/</Link></p>
+                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" to="https://pokeapi-javascript.vercel.app/" target="_blank">https://pokeapi-javascript.vercel.app/</Link></p>
                 </div>
             </div>
         </>

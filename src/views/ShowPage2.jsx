@@ -55,7 +55,7 @@ const ShowPage2 = (props) => {
                     <p className="m0"><strong>Github:</strong> <Link className="wrap-text" to="https://github.com/davidekunno93/Timezone_App_Frontend.git" target="_blank">https://github.com/davidekunno93/Timezone_App_Frontend.git</Link></p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text">Coming soon...</Link></p>
+                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" target="_blank">Coming soon...</Link></p>
                 </div>
             </div>
         </>
