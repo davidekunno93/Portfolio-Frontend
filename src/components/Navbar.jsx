@@ -136,9 +136,24 @@ const Navbar = () => {
                     <div id="terminal-games" className="nav-op mx-2 flx-r">
                         <li className="m0"><Link onClick={() => closeNavBar()} to="/terminal-games" className="m0 black-link font-ub">Terminal Games</Link>
                             <ul id="ma-dropdown" className="submenu font-ub">
-                                <li><Link to="https://replit.com/@DavidEkunno/Equation-Solver-Ax-a-Bx-b" target="_blank" className="black-text ml-4">Equation Solver</Link></li>
-                                <li><Link to="https://replit.com/@DavidEkunno/BlackJack" target="_blank" className="black-text ml-4">BlackJack</Link></li>
-                                <li><Link to="https://replit.com/@DavidEkunno/Rock-Paper-Scissors" target="_blank" className="black-text ml-4">Rock, Paper, Scissors</Link></li>
+                                <li><Link to="https://replit.com/@DavidEkunno/Equation-Solver-Ax-a-Bx-b" target="_blank" className="black-text">
+                                    <p className="m0 ml-4 black-text font-ub inline">Equation Solver</p>
+                                    <span class="material-symbols-outlined mr-4 v-bott right">
+                                        open_in_new
+                                    </span>
+                                </Link></li>
+                                <li><Link to="https://replit.com/@DavidEkunno/BlackJack" target="_blank" className="black-text">
+                                    <p className="m0 ml-4 black-text font-ub inline">BlackJack</p>
+                                    <span class="material-symbols-outlined mr-4 v-bott right">
+                                        open_in_new
+                                    </span>
+                                </Link></li>
+                                <li><Link to="https://replit.com/@DavidEkunno/Rock-Paper-Scissors" target="_blank" className="black-text">
+                                    <p className="m0 ml-4 black-text font-ub inline">Rock, Paper, Scissors</p>
+                                    <span class="material-symbols-outlined mr-4 v-bott right">
+                                        open_in_new
+                                    </span>
+                                </Link></li>
                             </ul>
                         </li>
                         <span id="spin" className="material-symbols-outlined menu-drop-arrows">
