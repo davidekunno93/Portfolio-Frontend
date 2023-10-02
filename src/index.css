@@ -1228,8 +1228,12 @@ div li {
   }
 }
 
+.m0 {
+  margin: 0px;
+}
+
 .mr-3-respond {
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 960px) {
@@ -1369,9 +1373,7 @@ div li {
   height: 150px;
 }
 
-.m0 {
-  margin: 0px;
-}
+
 
 .m-1 {
   margin: 5px;
