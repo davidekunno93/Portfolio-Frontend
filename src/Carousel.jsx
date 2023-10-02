@@ -48,7 +48,7 @@ export const Carousel = () => {
             <div className="carousel-btns flx-r just-ce">
 
                 <button onClick={() => updateIndex(activeIndex - 1)} className='arrow-left seethru'>
-                    <span className="material-symbols-outlined  black-text">
+                    <span className="material-symbols-outlined black-text">
                         arrow_back_ios
                     </span>
                 </button>
