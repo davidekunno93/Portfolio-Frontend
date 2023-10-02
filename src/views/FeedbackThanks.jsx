@@ -14,6 +14,7 @@ const FeedbackThanks = () => {
             <h1 className="center-text">Thank you for your Feedback!</h1>
             <button onClick={() => goBack()} className="square-btn-big center x-large my-3">Go Back</button>
             <div className="empty-5"></div>
+            <div className="empty-2"></div>
         </>
     )
 }

@@ -83,6 +83,7 @@ const ShowPage = () => {
                     <p className="m0"><strong>Deployed site:</strong>{project.website ? <Link className="wrap-text" to={project.website} target="_blank">{project.website}</Link> : " Coming soon"}</p>
                 </div>
             </div>
+            <div className="empty-2"></div>
         </>
     )
 }

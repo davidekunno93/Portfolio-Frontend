@@ -47,6 +47,7 @@ const TerminalGames = () => {
                     </button></Link>
                 </div>
             </div>
+            <div className="empty-2"></div>
         </>
     )
 }

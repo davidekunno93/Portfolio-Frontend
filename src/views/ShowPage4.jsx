@@ -42,6 +42,7 @@ const ShowPage4 = (props) => {
                     <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" to="https://weather-app-nine-topaz.vercel.app/" target="_blank">https://weather-app-nine-topaz.vercel.app/</Link></p>
                 </div>
             </div>
+            <div className="empty-2"></div>
         </>
     )
 }

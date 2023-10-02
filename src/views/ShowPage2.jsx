@@ -96,6 +96,7 @@ const ShowPage2 = (props) => {
                     <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" target="_blank">Coming soon...</Link></p>
                 </div>
             </div>
+            <div className="empty-2"></div>
         </>
     )
 }

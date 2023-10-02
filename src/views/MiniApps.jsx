@@ -55,6 +55,7 @@ const MiniApps = (props) => {
                     </button></Link>
                 </div>
             </div>
+            <div className="empty-2"></div>
         </>
     )
 }
