@@ -4,7 +4,7 @@ export const Footer = () => {
 
     return (
         <>
-        <div className="empty-2"></div>
+        {/* <div className="empty-2"></div> */}
             <div className="footer flx-r">
                 <div className="flx-1 flx-c mx-2 align-r">
                     <p className="m0 right-text x-large times">Thank you for viewing my page</p>

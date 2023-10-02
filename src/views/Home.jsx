@@ -320,7 +320,7 @@ const Home = () => {
                     <img className="tech-img mx-2 my-2" src="https://i.imgur.com/jWg176W.png" />
                 </div>
 
-            </div>
+            
             <div className="empty-5"></div>
             <div className="review flx-r flx-wrap just-se wide90 m-auto">
                 <div className="fb-text flx-2">
@@ -339,6 +339,8 @@ const Home = () => {
                         </span>
                     </button>
                 </div>
+            </div>
+            <div className="empty-2"></div>
             </div>
         </>
     )
