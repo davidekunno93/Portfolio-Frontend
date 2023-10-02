@@ -102,7 +102,7 @@ const Navbar = () => {
                 </div>
                 <div id="responsive-nav" className="links nav flx-r mt-4h">
                     <div className="nav-op mx-2 flx-r">
-                        <Link onClick={() => closeNavBar()} to="/dashboard" className="m0 black-link"><p className="m0 inline font-ub mr-3">Home</p>
+                        <Link onClick={() => closeNavBar()} to="/dashboard" className="m0 black-link"><p className="m0 inline font-ub mr-3-respond">Home</p>
                             {/* <span id="fade" className="material-symbols-outlined v-align mb-1">
                                 home
                             </span> */}
@@ -117,7 +117,7 @@ const Navbar = () => {
                                 <li><Link to="/showpage" state={{ project: webProjects[2] }} className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/7aP2Ove.png" />Pokemon Battle X</Link></li>
                             </ul>
                         </li>
-                        <span id="spin" className="material-symbols-outlined">
+                        <span id="spin" className="material-symbols-outlined menu-drop-arrows">
                             expand_more
                         </span>
                     </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
                                 <li className="mb-2"><Link to="/showpage4" className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/ZFr4XWX.png" />Geo-Weather App</Link></li>
                             </ul>
                         </li>
-                        <span id="spin" className="material-symbols-outlined">
+                        <span id="spin" className="material-symbols-outlined menu-drop-arrows">
                             expand_more
                         </span>
                     </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
                                 <li><Link to="https://replit.com/@DavidEkunno/Rock-Paper-Scissors" target="_blank" className="black-text ml-4">Rock, Paper, Scissors</Link></li>
                             </ul>
                         </li>
-                        <span id="spin" className="material-symbols-outlined">
+                        <span id="spin" className="material-symbols-outlined menu-drop-arrows">
                             expand_more
                         </span>
                     </div>

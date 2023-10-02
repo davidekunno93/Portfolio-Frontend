@@ -30,7 +30,7 @@ const ShowPage = () => {
             <div className="section-80 center my-2 flx-c">
 
                 {project.more_imgs.split("*").length > 3 ? <>
-                    <div className="picture-row flx-r">
+                    <div className="picture-row flx-r invisible768">
                         <div className="left-btn center-text">
                             <div className="v-helper"></div>
                             <img onClick={() => slideCarousel(carouselPosition - 1)} src="https://i.imgur.com/KapYyYQ.png" alt="" className="vb-arrow-left v-align inline-block" />
@@ -47,6 +47,15 @@ const ShowPage = () => {
                             <img onClick={() => slideCarousel(carouselPosition + 1)} src="https://i.imgur.com/N3aNd8b.png" alt="" className="vb-arrow-right v-align inline-block" />
                         </div>
                     </div>
+
+                    <div className="img-section flx-r flx-wrap just-sb visible768">
+                        {project.more_imgs.split("*").map((img_url, i) => {
+                            return <div key={i} className="s-img my-1">
+                                <Link to={img_url} target="_blank"><img className="section2-img center" src={img_url} /></Link>
+                            </div>
+                        })}
+                    </div>
+
                 </> :
 
                     <div className="img-section flx-r flx-wrap just-sb">
@@ -71,7 +80,7 @@ const ShowPage = () => {
                     <p className="m0"><strong>Github:</strong> <Link className="wrap-text" to={project.github} target="_blank">{project.github}</Link></p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Deployed site:</strong> <Link className="wrap-text" to={project.website ? project.website : ""} target="_blank">{project.website}</Link></p>
+                    <p className="m0"><strong>Deployed site:</strong>{project.website ? <Link className="wrap-text" to={project.website} target="_blank">{project.website}</Link> : " Coming soon"}</p>
                 </div>
             </div>
         </>

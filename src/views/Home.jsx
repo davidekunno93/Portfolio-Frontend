@@ -160,7 +160,7 @@ const Home = () => {
                         <h2>I am a Frontend Programmer</h2>
                     </div>
                     <div className="c2r2 flx-3">
-                        <p>I love programming because <strong>I love to problem solve</strong>, and programming
+                        <p className="black-text">I love programming because <strong>I love to problem solve</strong>, and programming
                             is a constant hamster wheel of solving for solutions. <strong>My favorite language is Python</strong>, its logic feels incredibly natural to me. Though Python isn't a Frontend language, JavaScript has similar logic and syntax, and I enjoy the <strong>combination of problem solving and stylistic creativity</strong> that feels unique to Frontend programming. At <Link to="https://www.codingtemple.com/" target="_blank">Coding Temple</Link>, a coding bootcamp, I was properly introduced to the world of programming. I learned different languages and frameworks, and I also learned <strong>'how to learn'</strong>, and where to find resources to facilitate learning.
                         </p>
                     </div>
