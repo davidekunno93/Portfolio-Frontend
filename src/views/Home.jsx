@@ -270,7 +270,7 @@ const Home = () => {
                             <div className="v-helper"></div>
                             <div className="v-align inline-block">
                                 <h1 className="m0 center-text">Incorrect Answer!</h1>
-                                <h2 className="m0 center-text my-2 color-green">&nbsp;</h2>
+                                <h2 className="m0 center-text my-2 color-red">The Correct answer is: {Array.isArray(questions) ? questions[count].correct_answer : null}</h2>
                                 <button onClick={() => nextQuestion()} className="square-btn center">Next Question</button>
                             </div>
                         </div>
@@ -281,7 +281,7 @@ const Home = () => {
                                 <Link to='https://opentdb.com' target="_blank" className="black-link"><img src="https://i.imgur.com/xgQwmEi.png" className="trivia-pic center mt-3h" />
                                     <p className="m0 v-align center-text small">
                                         Click to see the open Trivia Database API
-                                        <span class="material-symbols-outlined v-tbott ml-1 medium">
+                                        <span id="no-float" class="material-symbols-outlined v-tbott ml-1 medium">
                                             open_in_new
                                         </span>
                                     </p></Link>
