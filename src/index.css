@@ -1751,11 +1751,36 @@ div li {
   width: 30px;
 }
 
+.ml-3-4-respond {
+  margin-left: 15px;
+}
+
+.ml-3-6-respond {
+  margin-left: 15px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .invisible768 {
     display: none;
   }
+
+  .ml-3-4-respond {
+    margin-left: 20px;
+  }
+
+  .ml-3-6-respond {
+    margin-left: 30px;
+  }
+
+  .mt-h-respond {
+    margin-top: 3px;
+  }
+
+  .mt-1-respond {
+    margin-top: 5px;
+  }
+
 
   .flx-c-respond {
     flex-direction: row;

@@ -40,8 +40,8 @@ const WebPages = () => {
                     <p className="m0 square-title x-large center-text my-2 dark-text"><strong>{p.title}</strong></p>
                     <p className="m0 square-desc medium center-text black-text">{p.desc}</p>
                     <Link state={{ project: webProjects[i] }} to='/showpage'><button className="square-btn-big center x-large mt-3 flx-r">
-                        <p className="m0 inline v-align ml-3 mb-2">View</p>
-                        <span className="material-symbols-outlined v-align ml-2 mb-2 white-text">
+                        <p className="m0 inline v-align mb-2 ml-3-6-respond">View</p>
+                        <span className="material-symbols-outlined v-align ml-2 mb-2 white-text mt-h-respond">
                             arrow_forward
                         </span>
                     </button></Link>
