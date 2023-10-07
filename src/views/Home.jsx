@@ -34,7 +34,8 @@ const Home = () => {
                 headers: { "Content-Type": "application/json" }
             })
                 .then(resp => handleFeedbackData(resp));
-            // navigate('/feedback-received')
+                navigate('/feedback-received');
+                resetScroll();
         }
 
     }
@@ -55,6 +56,30 @@ const Home = () => {
         setQuestions(data.results)
         // console.log(data.results.incorrect_answers)
         // updateAnswers()
+        let answers = [data.results[count].correct_answer, ...data.results[count].incorrect_answers]
+        console.log(answers)
+        answers.sort()
+        console.log(answers)
+        setCurrentAnswers(answers)
+    }
+    const reloadTrivia = async () => {
+        let data = await getData();
+        // console.log(data)
+        console.log(data.results)
+        setQuestions(data.results)
+        // console.log(data.results.incorrect_answers)
+        // updateAnswers()
+        setCount(0)
+        setPoints(0)
+        finish.classList.add('d-none')
+        let answers = [data.results[0].correct_answer, ...data.results[0].incorrect_answers]
+        console.log(answers)
+        answers.sort()
+        console.log(answers)
+        setCurrentAnswers(answers)
+    }
+
+    const reloadAnswers = async () => {
         let answers = [data.results[count].correct_answer, ...data.results[count].incorrect_answers]
         console.log(answers)
         answers.sort()
@@ -108,6 +133,18 @@ const Home = () => {
             incorrect.classList.remove('d-none')
         }
     }
+
+    const resetScroll = () => {
+        window.scrollTo(0, 0)
+    }
+
+    useEffect(() => {
+        // window.addEventListener('click', resetScroll())
+        const links = document.getElementsByClassName('link')
+        for (let i=0; i<links.length; i++) {
+            links[i].addEventListener('mouseup', resetScroll);
+        }
+        }, [])
 
 
     return (
@@ -215,9 +252,9 @@ const Home = () => {
                     <div className="section2-space flx-c">
                         <img src="https://i.imgur.com/E7qxluT.png" className="mywork-img" />
                         <h2 className="center-text xx-large dark-text">Projects</h2>
-                        <Link to="/web-pages"><button className="square-btn-big center mb-3">
+                        <Link to="/web-pages"><button onClick={() => resetScroll()} className="square-btn-big center mb-3">
                             <p className="m0 ml-4 inline v-align">See More</p>
-                            <span class="material-symbols-outlined right v-align ml-2 white-text">
+                            <span className="material-symbols-outlined right v-align ml-2 white-text">
                                 arrow_forward
                             </span>
                         </button></Link>
@@ -225,9 +262,9 @@ const Home = () => {
                     <div className="section2-space flx-c">
                         <img src="https://i.imgur.com/40THUP7.png" className="mywork-img" />
                         <h2 className="center-text xx-large dark-text">Mini Apps</h2>
-                        <Link to="/mini-apps"><button className="square-btn-big center mb-3">
+                        <Link to="/mini-apps"><button onClick={() => resetScroll()} className="square-btn-big center mb-3">
                             <p className="m0 ml-4 inline v-align">See More</p>
-                            <span class="material-symbols-outlined right v-align ml-2 white-text">
+                            <span className="material-symbols-outlined right v-align ml-2 white-text">
                                 arrow_forward
                             </span>
                         </button></Link>
@@ -235,9 +272,9 @@ const Home = () => {
                     <div className="section2-space flx-c">
                         <img src="https://i.imgur.com/t7emokh.png" className="mywork-img" />
                         <h2 className="center-text xx-large dark-text">Terminal Games</h2>
-                        <Link to="/terminal-games"><button className="square-btn-big center mb-3">
+                        <Link to="/terminal-games"><button onClick={() => resetScroll()} className="square-btn-big center mb-3">
                             <p className="m0 ml-4 inline v-align">See More</p>
-                            <span class="material-symbols-outlined right v-align ml-2 white-text">
+                            <span className="material-symbols-outlined right v-align ml-2 white-text">
                                 arrow_forward
                             </span>
                         </button></Link>
@@ -255,6 +292,7 @@ const Home = () => {
                             <div className="v-align inline-block">
                                 <h1 className="m0 center-text">End of Quiz</h1>
                                 <h2 className="m0 center-text my-2 color-green">You Scored {points}/10</h2>
+                                <button onClick={() => reloadTrivia()} className="square-btn">Reload Trivia</button>
                                 {/* <button onClick={() => nextQuestion()} className="square-btn center">Next Question</button> */}
                             </div>
                         </div>
@@ -281,7 +319,7 @@ const Home = () => {
                                 <Link to='https://opentdb.com' target="_blank" className="black-link"><img src="https://i.imgur.com/xgQwmEi.png" className="trivia-pic center mt-3h" />
                                     <p className="m0 v-align center-text small">
                                         Click to see the open Trivia Database API
-                                        <span id="no-float" class="material-symbols-outlined v-tbott ml-1 medium">
+                                        <span id="no-float" className="material-symbols-outlined v-tbott ml-1 medium">
                                             open_in_new
                                         </span>
                                     </p></Link>
@@ -289,7 +327,7 @@ const Home = () => {
                             <div className="r2c2 flx-3">
                                 <div className="answers flx-r-respond flx-wrap pad8">
                                     {currentAnswers.map((ans, i) => {
-                                        return <div className="answer-choice my-2">
+                                        return <div key={i} className="answer-choice my-2">
                                             <input onClick={() => updateSelection(ans)} id={i} type="radio" name="multiple-choice" className="radio-btn v-align" value={ans} />
                                             <label htmlFor={i} className="radio-label m0 inline ml-2 v-align large">{ans}</label>
                                         </div>
@@ -334,7 +372,7 @@ const Home = () => {
                     <textarea onChange={(e) => updateExtraFeedback(e)} className="form-textarea2 flx-1" placeholder="Any extra information..."></textarea>
                     <button onClick={() => submitFeedback()} className="square-btn-big center my-3">
                         <p className="m0 ml-3 inline v-align large">SUBMIT</p>
-                        <span class="material-symbols-outlined v-align ml-2 white-text">
+                        <span className="material-symbols-outlined v-align ml-2 white-text">
                             arrow_forward
                         </span>
                     </button>

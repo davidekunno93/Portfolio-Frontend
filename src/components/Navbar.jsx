@@ -1,14 +1,28 @@
 import axios from "axios";
-import { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"
 import { DataContext } from "../Context/DataProvider";
+
 
 
 const Navbar = () => {
     // const [isNarrow, setIsNarrow] = useState(false);
     const { webProjects, setWebProjects } = useContext(DataContext);
 
+    const resetScroll = () => {
+        window.scrollTo(0, 0);
+        // console.log('eggs')
+    }
+    useEffect(() => {
+        // window.addEventListener('click', resetScroll())
+        const links = document.getElementsByClassName('link')
+        for (let i=0; i<links.length; i++) {
+            links[i].addEventListener('mouseup', resetScroll);
+        }
+        }, [])
+    
+    
 
 
     // const getData = async () => {
@@ -90,7 +104,7 @@ const Navbar = () => {
             <div className="navbar flx-r just-se">
                 <div className="white-full d-none"></div>
                 <div className="mylab-logo mt-3 mx-2">
-                    <Link to="/dashboard"><img src="https://i.imgur.com/Z5l696h.png" className="nav-img" /></Link>
+                    <Link to="/dashboard" className="link"><img src="https://i.imgur.com/Z5l696h.png" className="nav-img" /></Link>
                 </div>
                 <div className="hamburger narrow-nav flx-1">
                     <div onClick={() => toggleNavBar()} id="anim-hb" className="anim-hb-icon mt-3h right mr-3">
@@ -102,7 +116,7 @@ const Navbar = () => {
                 </div>
                 <div id="responsive-nav" className="links nav flx-r mt-4h">
                     <div className="nav-op mx-2 flx-r">
-                        <Link onClick={() => closeNavBar()} to="/dashboard" className="m0 black-link"><p className="m0 inline font-ub mr-3-respond">Home</p>
+                        <Link onClick={() => closeNavBar()} to="/dashboard" className="link m0 black-link"><p className="m0 inline font-ub mr-3-respond">Home</p>
                             {/* <span id="fade" className="material-symbols-outlined v-align mb-1">
                                 home
                             </span> */}
@@ -110,11 +124,11 @@ const Navbar = () => {
                     </div>
                     <div id="webpages" className="nav-op mx-2 flx-r">
                         {/* <img onClick={() => closeNavBar()} className="close-responsive-nav" src="https://i.imgur.com/xoq0OUz.png" /> */}
-                        <li className="m0"><Link onClick={() => closeNavBar()} to="/web-pages" className="black-link font-ub">Projects</Link>
+                        <li className="m0"><Link onClick={() => closeNavBar()} to="/web-pages" className="black-link font-ub link">Projects</Link>
                             <ul id="wp-dropdown" className="submenu font-ub">
-                                <li><Link to="/showpage" state={{ project: webProjects[0] }} className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/gExodxr.png" />Real Peace Meditation</Link></li>
-                                <li><Link to="/showpage" state={{ project: webProjects[1] }} className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/36xKw57.png" />FitHub App</Link></li>
-                                <li><Link to="/showpage" state={{ project: webProjects[2] }} className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/7aP2Ove.png" />Pokemon Battle X</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[0] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/gExodxr.png" />Real Peace Meditation</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[1] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/36xKw57.png" />FitHub App</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[2] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/7aP2Ove.png" />Pokemon Battle X</Link></li>
                             </ul>
                         </li>
                         <span id="spin" className="material-symbols-outlined menu-drop-arrows">
@@ -122,11 +136,11 @@ const Navbar = () => {
                         </span>
                     </div>
                     <div id="mini-apps" className="nav-op mx-2 flx-r">
-                        <li className="m0"><Link onClick={() => closeNavBar()} to="/mini-apps" className="m0 black-link font-ub">Mini Apps</Link>
+                        <li className="m0"><Link onClick={() => closeNavBar()} to="/mini-apps" className="m0 black-link font-ub link">Mini Apps</Link>
                             <ul id="ma-dropdown" className="submenu font-ub">
-                                <li><Link to="/showpage2" className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/zHV6kqG.png" />TimeZone App</Link></li>
-                                <li><Link to="/showpage3" className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/oMhkUW3.png" />Pick A Pokemon</Link></li>
-                                <li className="mb-2"><Link to="/showpage4" className="black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/ZFr4XWX.png" />Geo-Weather App</Link></li>
+                                <li><Link to="/showpage2" className="link black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/zHV6kqG.png" />TimeZone App</Link></li>
+                                <li><Link to="/showpage3" className="link black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/oMhkUW3.png" />Pick A Pokemon</Link></li>
+                                <li className="mb-2"><Link to="/showpage4" className="link black-text"><img className="nb-icon mx-4" src="https://i.imgur.com/ZFr4XWX.png" />Geo-Weather App</Link></li>
                             </ul>
                         </li>
                         <span id="spin" className="material-symbols-outlined menu-drop-arrows">
@@ -134,23 +148,23 @@ const Navbar = () => {
                         </span>
                     </div>
                     <div id="terminal-games" className="nav-op mx-2 flx-r">
-                        <li className="m0"><Link onClick={() => closeNavBar()} to="/terminal-games" className="m0 black-link font-ub">Terminal Games</Link>
+                        <li className="m0"><Link onClick={() => closeNavBar()} to="/terminal-games" className="link m0 black-link font-ub">Terminal Games</Link>
                             <ul id="ma-dropdown" className="submenu font-ub">
                                 <li><Link to="https://replit.com/@DavidEkunno/Equation-Solver-Ax-a-Bx-b" target="_blank" className="black-text">
                                     <p className="m0 ml-4 black-text font-ub inline">Equation Solver</p>
-                                    <span class="material-symbols-outlined mr-4 v-bott right">
+                                    <span className="material-symbols-outlined mr-4 v-bott right">
                                         open_in_new
                                     </span>
                                 </Link></li>
                                 <li><Link to="https://replit.com/@DavidEkunno/BlackJack" target="_blank" className="black-text">
                                     <p className="m0 ml-4 black-text font-ub inline">BlackJack</p>
-                                    <span class="material-symbols-outlined mr-4 v-bott right">
+                                    <span className="material-symbols-outlined mr-4 v-bott right">
                                         open_in_new
                                     </span>
                                 </Link></li>
                                 <li><Link to="https://replit.com/@DavidEkunno/Rock-Paper-Scissors" target="_blank" className="black-text">
                                     <p className="m0 ml-4 black-text font-ub inline">Rock, Paper, Scissors</p>
-                                    <span class="material-symbols-outlined mr-4 v-bott right">
+                                    <span className="material-symbols-outlined mr-4 v-bott right">
                                         open_in_new
                                     </span>
                                 </Link></li>
@@ -164,7 +178,7 @@ const Navbar = () => {
                         <Link to='https://magenta-nissie-77.tiiny.site' target="_blank">
                             <button className="square-btn-allow">
                                 <p className="m0 inline v-align">View Resume</p>
-                                <span class="material-symbols-outlined ml-2 v-align">
+                                <span className="material-symbols-outlined ml-2 v-align">
                                     open_in_new
                                 </span>
                             </button>
@@ -175,7 +189,7 @@ const Navbar = () => {
                     <Link to='https://magenta-nissie-77.tiiny.site' target="_blank">
                         <button className="square-btn-allow">
                             <p className="m0 inline v-align">View Resume</p>
-                            <span class="material-symbols-outlined ml-2 v-align">
+                            <span className="material-symbols-outlined ml-2 v-align">
                                 open_in_new
                             </span>
                         </button>
