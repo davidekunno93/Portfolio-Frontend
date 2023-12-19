@@ -66,6 +66,18 @@ button {
   /* transition: border-color 0.25s; */
 }
 
+.pointer {
+  cursor: pointer;
+}
+.onHover{
+  /* opacity: 1; */
+  transition-duration: 0.3s;
+}
+.onHover:hover{
+  opacity: 0.75;
+  transition-duration: 0.3s;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -721,11 +733,14 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border: 2px solid gray; */
 }
 
 .inner {
   white-space: nowrap;
   transition: transform 0.3s;
+  /* display: table-cell;
+  vertical-align: middle; */
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); */
 }
 
@@ -757,6 +772,7 @@ p {
   /* padding: 0 20px 0 20px; */
   margin: 0 20px 0 20px;
   border-radius: 12px;
+  vertical-align: middle;
 }
 
 .carousel-text {
@@ -1089,8 +1105,9 @@ p {
 .mywork-img {
   width: 300px;
   height: 200px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
+  border-radius: 12px;
 }
 
 .p1 {

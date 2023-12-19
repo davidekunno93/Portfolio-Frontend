@@ -9,7 +9,7 @@ const ShowPage = () => {
     const { project } = location.state
 
     const slideCarousel = (newPosition) => {
-        if (newPosition >= project.more_imgs.split("*").length - 3) {
+        if (newPosition > project.more_imgs.split("*").length - 3) {
             newPosition = 0
         } else if (newPosition < 0) {
             newPosition = project.more_imgs.split("*").length - 3
@@ -77,10 +77,10 @@ const ShowPage = () => {
                     <p className="m0"><strong>Technologies:</strong> {project.techs}</p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Github:</strong> <Link className="wrap-text" to={project.github} target="_blank">{project.github}</Link></p>
+                    <p className="m0"><strong>Github: </strong><Link className="wrap-text" to={project.github} target="_blank">{project.github}</Link></p>
                 </div>
                 <div className="section-text">
-                    <p className="m0"><strong>Deployed site:</strong>{project.website ? <Link className="wrap-text" to={project.website} target="_blank">{project.website}</Link> : " Coming soon"}</p>
+                    <p className="m0"><strong>Deployed site: </strong>{project.website ? <Link className="wrap-text" to={project.website} target="_blank">{project.website}</Link> : " Coming soon"}</p>
                 </div>
             </div>
             <div className="empty-2"></div>

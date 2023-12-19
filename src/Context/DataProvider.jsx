@@ -3,6 +3,18 @@ import { createContext, useContext, useState } from "react"
 const DataProvider = (props) => {
     const [webProjects, setWebProjects] = useState([
         {
+            title: "Routewise",
+            dp: "https://i.imgur.com/und3dr5.png",
+            title_img: "https://i.imgur.com/1RTY0lA.png",
+            desc: "This App allows users to catch up to 5 pokemon and battle them against other users",
+            text1: "Routewise is product that serves as a itinerary generator for users who are travelling to foreign destinations. I worked with a team of four; Cheryl Chen (Product Manager), Jenny Jin (Product Designer), Kate Leuders (Back-End Developer) and myself (Front-End Developer), creating this real-world product using a product idea that met real customer needs and customizing its user-flow based on user feedback. I used Firebase to handle the authentication, I worked with Kate using Flask to handle the Back-End operations and I used React, HTML and CSS to create everything on the Front-End. In this project I worked with several APIs, I learned how to implement things like an on-screen map, a date-range picker, and create panels and I got a real idea of what it's like to work on a team with different disciplines.",
+            text2: "The Routewise web app gives users the ability to sign up and log in, create a trip to a destination, name that trip, populate it with places searched for on a map using an address autocomplete API, have an optimized itinerary generated based on place proximities and new functions are continually being worked on to improve the web application.",
+            more_imgs: "https://i.imgur.com/wx4upLO.png*https://i.imgur.com/02aZHAR.png*https://i.imgur.com/oe52kHu.png*https://i.imgur.com/cCoCoMv.png",
+            techs: "HTML, CSS, Javascript, Python, Flask, PostgreSQL, Firebase",
+            github: "https://github.com/davidekunno93/Routewise-FrontEnd.git",
+            website: "https://routewise-front-end.vercel.app/",
+        },
+        {
             title: "Real Peace Meditation",
             dp: "https://i.imgur.com/w6Akx1Z.png",
             title_img: "https://i.imgur.com/Pa1FfzI.png",
@@ -39,6 +51,19 @@ const DataProvider = (props) => {
             website: "https://pokemon-battle-k3vf.onrender.com/",
         }
     ])
+
+    let testProject = {
+        title: "Routewise",
+        dp: "https://i.imgur.com/und3dr5.png",
+        title_img: "https://i.imgur.com/oe52kHu.png",
+        desc: "This App allows users to catch up to 5 pokemon and battle them against other users",
+        text1: "I was tasked with creating this App during my Coding Bootcamp. I used Flask for the Backend, HTML and Jinja for the Frontend and PostgreSQL to organize the databases. User authentication, api calls, conditional rendering on a webpage, database structuring and lots of backend processing are some of the major things I learned and practiced while doing this project.",
+        text2: "This App allows users to search for pokemon using the pokedex functionality which also displays the pokemon stats. Users can catch and release pokemon (up to 5 can be caught), look over their pokemon on the 'My Team' page and find other users to battle. These battles update your win stats",
+        more_imgs: "https://i.imgur.com/x58F4yh.png*https://i.imgur.com/H1w3kaT.png*https://i.imgur.com/8pUi2Ue.png*https://i.imgur.com/cGX5imp.png*https://i.imgur.com/Qf3kZoO.png*https://i.imgur.com/KtqKI1z.png",
+        techs: "HTML, CSS, Javascript, Python, Flask, PostgreSQL, Firebase",
+        github: "https://github.com/davidekunno93/Routewise-FrontEnd.git",
+        website: "https://routewise-front-end.vercel.app/",
+    }
 
     return (
         <DataContext.Provider value={{ "webProjects": webProjects, "setWebProjects": setWebProjects }}>

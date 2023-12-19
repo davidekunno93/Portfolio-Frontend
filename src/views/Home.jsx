@@ -34,8 +34,8 @@ const Home = () => {
                 headers: { "Content-Type": "application/json" }
             })
                 .then(resp => handleFeedbackData(resp));
-                navigate('/feedback-received');
-                resetScroll();
+            navigate('/feedback-received');
+            resetScroll();
         }
 
     }
@@ -45,6 +45,17 @@ const Home = () => {
         navigate('/feedback-received')
     }
 
+
+    function escapeHtml(text) {
+        return text
+            .replace(/&amp;quot;/g, '"')
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            .replace(/&gt;/g, ">")
+            .replace(/&quot;/g, '"')
+            .replace(/&#039;/g, "'");
+    }
+
     const getData = async () => {
         const resp = await axios.get('https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple')
         return resp.data
@@ -52,6 +63,10 @@ const Home = () => {
     const loadData = async () => {
         let data = await getData();
         // console.log(data)
+        for (let i = 0; i < data.results.length; i++) {
+            data.results[i].question = escapeHtml(data.results[i].question)
+            console.log(data.results[i].question)
+        }
         console.log(data.results)
         setQuestions(data.results)
         // console.log(data.results.incorrect_answers)
@@ -87,11 +102,15 @@ const Home = () => {
         setCurrentAnswers(answers)
     }
 
-    const [questions, setQuestions] = useState(() => loadData())
+    const [questions, setQuestions] = useState(null)
     const [currentAnswers, setCurrentAnswers] = useState(null)
     const [count, setCount] = useState(0)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [points, setPoints] = useState(0)
+
+    useEffect(() => {
+        loadData()
+    }, [])
 
     const updateSelection = (ans) => {
         // e.preventDefault();
@@ -141,17 +160,17 @@ const Home = () => {
     useEffect(() => {
         // window.addEventListener('click', resetScroll())
         const links = document.getElementsByClassName('link')
-        for (let i=0; i<links.length; i++) {
+        for (let i = 0; i < links.length; i++) {
             links[i].addEventListener('mouseup', resetScroll);
         }
-        }, [])
+    }, [])
 
 
     return (
         <>
-        <div className="p1">
-            <div className="empty-5"></div>
-            {/* <h1 className="center-text">Hi, I'm David...</h1>
+            <div className="p1">
+                <div className="empty-5"></div>
+                {/* <h1 className="center-text">Hi, I'm David...</h1>
             <div className="flx-r flx-wrap just-se">
                 <div className="section">
                     <h2 className="center-text">About Me</h2>
@@ -184,33 +203,33 @@ const Home = () => {
                 </div>
             </div> */}
 
-            <div className="bio-section flx-r-respond m-auto wide90">
-                <h1 className="respond-visible center-text">Hi, my name is David...</h1>
-                <div className="c1 flx-1 section3">
-                    <img src="https://i.imgur.com/g0ZSvBo.png" alt="" className="bio-img center" />
-                </div>
-                <div className="c2 flx-2 flx-c respond-center">
-                    <div className="c2r4 flx-1 respond-invisible">
-                        <h1>Hi, my name is David...</h1>
+                <div className="bio-section flx-r-respond m-auto wide90">
+                    <h1 className="respond-visible center-text">Hi, my name is David...</h1>
+                    <div className="c1 flx-1 section3">
+                        <img src="https://i.imgur.com/g0ZSvBo.png" alt="" className="bio-img center" />
                     </div>
-                    <div className="c2r1 flx-1">
-                        <h2>I am a Frontend Programmer</h2>
-                    </div>
-                    <div className="c2r2 flx-3">
-                        <p className="black-text">I love programming because <strong>I love to problem solve</strong>, and programming
-                            is a constant hamster wheel of solving for solutions. <strong>My favorite language is Python</strong>, its logic feels incredibly natural to me. Though Python isn't a Frontend language, JavaScript has similar logic and syntax, and I enjoy the <strong>combination of problem solving and stylistic creativity</strong> that feels unique to Frontend programming. At <Link to="https://www.codingtemple.com/" target="_blank">Coding Temple</Link>, a coding bootcamp, I was properly introduced to the world of programming. I learned different languages and frameworks, and I also learned <strong>'how to learn'</strong>, and where to find resources to facilitate learning.
-                        </p>
-                    </div>
-                    <div className="c2r3 flx-r flx-1">
-                        <div className="btns"></div>
-                        <Link to='https://github.com/davidekunno93' target="_blank"><button className="square-btn mr-2"><p className="m0 inline v-align">Github</p><img src="https://i.imgur.com/ECvRrxw.png" alt="" className="link-img ml-2" /></button></Link>
-                        <Link to='https://www.linkedin.com/in/david-ekunno-794619a3/' target="_blank"><button className="square-btn ml-2"><p className="m0 inline v-align">LinkedIn</p><img src="https://i.imgur.com/WBpcM53.png" alt="" className="link-img ml-2" /></button></Link>
+                    <div className="c2 flx-2 flx-c respond-center">
+                        <div className="c2r4 flx-1 respond-invisible">
+                            <h1>Hi, my name is David...</h1>
+                        </div>
+                        <div className="c2r1 flx-1">
+                            <h2>I am a Frontend Programmer</h2>
+                        </div>
+                        <div className="c2r2 flx-3">
+                            <p className="black-text">I love programming because <strong>I love to problem solve</strong>, and programming
+                                is a constant hamster wheel of solving for solutions. <strong>My favorite language is Python</strong>, its logic feels incredibly natural to me. Though Python isn't a Frontend language, JavaScript has similar logic and syntax, and I enjoy the <strong>combination of problem solving and stylistic creativity</strong> that feels unique to Frontend programming. At <Link to="https://www.codingtemple.com/" target="_blank">Coding Temple</Link>, a coding bootcamp, I was properly introduced to the world of programming. I learned different languages and frameworks, and I also learned <strong>'how to learn'</strong>, and where to find resources to facilitate learning.
+                            </p>
+                        </div>
+                        <div className="c2r3 flx-r flx-1">
+                            <div className="btns"></div>
+                            <Link to='https://github.com/davidekunno93' target="_blank"><button className="square-btn mr-2"><p className="m0 inline v-align">Github</p><img src="https://i.imgur.com/ECvRrxw.png" alt="" className="link-img ml-2" /></button></Link>
+                            <Link to='https://www.linkedin.com/in/david-ekunno-794619a3/' target="_blank"><button className="square-btn ml-2"><p className="m0 inline v-align">LinkedIn</p><img src="https://i.imgur.com/WBpcM53.png" alt="" className="link-img ml-2" /></button></Link>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="empty-3"></div>
+                <div className="empty-3"></div>
             </div>
             <div className="p2-p3">
                 {/* <div className="container part2">
@@ -223,12 +242,12 @@ const Home = () => {
                 <div className="flx-r flx-wrap just-se">
 
                     {/* <div className="box flx-c"> */}
-                        <div className="section4-yellow flx-c">
-                            <img src="https://i.imgur.com/f4gfQvQ.png" className="section4-img center" />
-                            <h2 className="center-text">Communication</h2>
-                            <p className="m0 font-ub center-text mb-2">Keeping a positive mindset and remaining on the same page with your team is paramount. I do this with positive reinforcement, constructive feedback and actively exploring others' ideas.</p>
-                        </div>
-                        {/* <div className="favorites flx-r just-ce my-2">
+                    <div className="section4-yellow flx-c">
+                        <img src="https://i.imgur.com/f4gfQvQ.png" className="section4-img center" />
+                        <h2 className="center-text">Communication</h2>
+                        <p className="m0 font-ub center-text mb-2">Keeping a positive mindset and remaining on the same page with your team is paramount. I do this with positive reinforcement, constructive feedback and actively exploring others' ideas.</p>
+                    </div>
+                    {/* <div className="favorites flx-r just-ce my-2">
                             <img src="https://i.imgur.com/OysRrUq.png" alt="" className="star-img" />
                             <p className="m0">&nbsp;#</p>
                         </div> */}
@@ -250,7 +269,7 @@ const Home = () => {
                 <h1 className="center-text">My Work</h1>
                 <div className="part3 section-90 flx-r flx-wrap just-sb-respond">
                     <div className="section2-space flx-c">
-                        <img src="https://i.imgur.com/E7qxluT.png" className="mywork-img" />
+                        <img src="https://i.imgur.com/und3dr5.png" className="mywork-img" />
                         <h2 className="center-text xx-large dark-text">Projects</h2>
                         <Link to="/web-pages"><button onClick={() => resetScroll()} className="square-btn-big center mb-3">
                             <p className="m0 ml-4 inline v-align">See More</p>
@@ -358,27 +377,27 @@ const Home = () => {
                     <img className="tech-img mx-2 my-2" src="https://i.imgur.com/jWg176W.png" />
                 </div>
 
-            
-            <div className="empty-5"></div>
-            <div className="review flx-r flx-wrap just-se wide90 m-auto">
-                <div className="fb-text flx-2">
-                    <div className="text pad28">
-                        <h1 className="center-text m0 mt-5">Your Feedback is Invaluable</h1>
-                        <p className="pad16 center-text font-ub">Any suggestion, constructive criticism, appraisal or even question is welcome! The feedback you provide will help improve this porfolio page.</p>
+
+                <div className="empty-5"></div>
+                <div className="review flx-r flx-wrap just-se wide90 m-auto">
+                    <div className="fb-text flx-2">
+                        <div className="text pad28">
+                            <h1 className="center-text m0 mt-5">Your Feedback is Invaluable</h1>
+                            <p className="pad16 center-text font-ub">Any suggestion, constructive criticism, appraisal or even question is welcome! The feedback you provide will help improve this porfolio page.</p>
+                        </div>
+                    </div>
+                    <div className="section2 flx-1 flx-c">
+                        <input onChange={(e) => updateSuggestion(e)} className="form-input2 my-2" type="text" placeholder="I think it would be cool if..." />
+                        <textarea onChange={(e) => updateExtraFeedback(e)} className="form-textarea2 flx-1" placeholder="Any extra information..."></textarea>
+                        <button onClick={() => submitFeedback()} className="square-btn-big center my-3">
+                            <p className="m0 ml-3 inline v-align large">SUBMIT</p>
+                            <span className="material-symbols-outlined v-align ml-2 white-text">
+                                arrow_forward
+                            </span>
+                        </button>
                     </div>
                 </div>
-                <div className="section2 flx-1 flx-c">
-                    <input onChange={(e) => updateSuggestion(e)} className="form-input2 my-2" type="text" placeholder="I think it would be cool if..." />
-                    <textarea onChange={(e) => updateExtraFeedback(e)} className="form-textarea2 flx-1" placeholder="Any extra information..."></textarea>
-                    <button onClick={() => submitFeedback()} className="square-btn-big center my-3">
-                        <p className="m0 ml-3 inline v-align large">SUBMIT</p>
-                        <span className="material-symbols-outlined v-align ml-2 white-text">
-                            arrow_forward
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <div className="empty-2"></div>
+                <div className="empty-2"></div>
             </div>
         </>
     )

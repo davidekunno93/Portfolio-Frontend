@@ -8,6 +8,12 @@ const WebPages = () => {
 
     const projects = [
         {
+            img: "https://i.imgur.com/und3dr5.png",
+            title: "Routewise",
+            desc: "Routewise lets users create and save custom trip itineraries for different travel destinations",
+            page: ""
+        },
+        {
             img: "https://i.imgur.com/w6Akx1Z.png",
             title: "RealPeace Website",
             desc: "RealPeace is a website for social gatherings and organized group meditation meetups",

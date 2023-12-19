@@ -61,15 +61,28 @@ const Navbar = () => {
 
     const toggleNavBar = () => {
         let element = document.getElementById("responsive-nav")
-        element.classList.toggle("respond");
         let anim_hb = document.getElementById("anim-hb")
-        anim_hb.classList.toggle('openmenu')
         let webpages = document.getElementById("webpages")
         let mini_apps = document.getElementById("mini-apps")
         let terminal_games = document.getElementById("terminal-games")
-        webpages.classList.toggle("nav-ops")
-        mini_apps.classList.toggle("nav-ops")
-        terminal_games.classList.toggle("nav-ops")
+        if (element.classList.contains('respond')) {
+            element.classList.remove("respond");
+            anim_hb.classList.remove('openmenu')
+            webpages.classList.remove("nav-ops")
+            mini_apps.classList.remove("nav-ops")
+            terminal_games.classList.remove("nav-ops")
+        } else {
+            element.classList.add("respond");
+            anim_hb.classList.add('openmenu')
+            webpages.classList.add("nav-ops")
+            mini_apps.classList.add("nav-ops")
+            terminal_games.classList.add("nav-ops")
+        }
+        // element.classList.toggle("respond");
+        // anim_hb.classList.toggle('openmenu')
+        // webpages.classList.toggle("nav-ops")
+        // mini_apps.classList.toggle("nav-ops")
+        // terminal_games.classList.toggle("nav-ops")
     }
     const showNavBar = () => {
         let element = document.getElementById("responsive-nav")
@@ -106,7 +119,7 @@ const Navbar = () => {
                 <div className="mylab-logo mt-3 mx-2">
                     <Link to="/dashboard" className="link"><img src="https://i.imgur.com/Z5l696h.png" className="nav-img" /></Link>
                 </div>
-                <div className="hamburger narrow-nav flx-1">
+                <div className="hamburger narrow-nav flx-1 pointer onHove ">
                     <div onClick={() => toggleNavBar()} id="anim-hb" className="anim-hb-icon mt-3h right mr-3">
                         <span className="line1"></span>
                         <span className="line2"></span>
@@ -126,9 +139,10 @@ const Navbar = () => {
                         {/* <img onClick={() => closeNavBar()} className="close-responsive-nav" src="https://i.imgur.com/xoq0OUz.png" /> */}
                         <li className="m0"><Link onClick={() => closeNavBar()} to="/web-pages" className="black-link font-ub link">Projects</Link>
                             <ul id="wp-dropdown" className="submenu font-ub">
-                                <li><Link to="/showpage" state={{ project: webProjects[0] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/gExodxr.png" />Real Peace Meditation</Link></li>
-                                <li><Link to="/showpage" state={{ project: webProjects[1] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/36xKw57.png" />FitHub App</Link></li>
-                                <li><Link to="/showpage" state={{ project: webProjects[2] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/7aP2Ove.png" />Pokemon Battle X</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[0] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/qyd4LXy.png" />Routewise</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[1] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/gExodxr.png" />Real Peace Meditation</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[2] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/36xKw57.png" />FitHub App</Link></li>
+                                <li><Link to="/showpage" state={{ project: webProjects[3] }} className="black-text link"><img className="nb-icon mx-4" src="https://i.imgur.com/7aP2Ove.png" />Pokemon Battle X</Link></li>
                             </ul>
                         </li>
                         <span id="spin" className="material-symbols-outlined menu-drop-arrows">
